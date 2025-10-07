@@ -1,0 +1,30 @@
+from random import *
+stas_score = int(input('Введите ваш балл: '))
+lst = []
+lst.append(stas_score)
+for i in range(100):
+    rd = randrange(0, 100)
+    if rd not in lst:
+        k = 1
+        lst.append(rd)
+lst.sort(reverse = True)
+def check_score(scores, student_score):
+    if stas_score >= lst[2]:
+        return 'Вы в тройке победителей!'
+    elif stas_score < lst[2]:
+        return 'Вы не попали в тройку победителей'
+top3 = []
+for i in range(3):
+    top3.append(lst[i])
+k = 0
+for x in lst:
+    k += 1
+    if stas_score == x:
+        res = k
+print(check_score(lst, stas_score))
+print('Топ 3:', top3)
+print('Ваша позиция:', res)
+print(lst)
+
+    
+    

@@ -1,0 +1,13 @@
+def print_pack_report(count):
+    if count % 3 == 0 and count % 5 == 0:
+        return 'Расфасуем по 3 и по 5'
+    elif count % 3 != 0 and count % 5 == 0:
+        return 'Расфасуем по 5'
+    elif count % 3 == 0 and count % 5 != 0:
+        return 'Расфасуем по 3'
+    else:
+        return 'Не заказываем'
+
+
+count = int(input('Введите колличество:' ))
+print(count, '-' , print_pack_report(count))

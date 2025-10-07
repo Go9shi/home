@@ -1,0 +1,31 @@
+from random import *
+
+def pass_gen(leight):
+    edit = []
+    abc = alphabet
+    for i in range(3):
+        if ask[i] == '1':
+            abc += list_alphabets[i]
+            edit.append(choice(list_alphabets[i]))
+    for j in range(leight - len(edit)):
+        edit.append(choice(abc))
+    shuffle(edit)
+    res = ''.join(edit)
+    return res
+
+
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+alphabet1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+alphabet2 = '!@#$%^&*()'
+alphabet3 = '1234567890'
+
+
+leight = int(input('Введите длину пароля:'))
+ask1 = (input('Вы хотите использовать верхний регистр? (Да - 1) (Нет - 0)'))
+ask2 = (input('Вы хотите использовать спец. символы? (Да - 1) (Нет - 0)'))
+ask3 = (input('Вы хотите использовать цифры? (Да - 1) (Нет - 0)'))
+ask = [ask1, ask2, ask3]
+list_alphabets = [alphabet1, alphabet2, alphabet3]
+
+
+print(pass_gen(leight))
